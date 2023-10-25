@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2 - HTML DOM</title>
+</head>
+<body>
+    <h1 id="title">Coffee Shop Menu</h1>
+    <ul id="drink-list">
+        <li>Coffee</li>
+        <li>Capuchino</li>
+        <li>Milk Tea</li>
+        <li id="Fruit">Tropical Fruit Tea</li>
+        <li>Peach Tea</li>
+    </ul>
+
+    <button id="btn-update">Update Menu</button>
+
+    <script>
+        let btnUpdate = document.getElementById("btn-update");
+
+        btnUpdate.addEventListener('click', () => {
+            alert("Button update is clicked");
+            console.log("Button is clicked");
+
+            let titleElem = document.getElementById("title");
+            console.log(titleElem);
+            titleElem.style.color = "red";
+
+            //remove element
+            let FruitElem = document.getElementById("Fruit");
+            FruitElem.remove();
+
+            //add element 
+            let newItemElem = document.createElement("li");
+            newItemElem.innerHTML ="Fruit Yogurt";
+            let drinkListElem = document.getElementById("drink-list");
+            drinkListElem.appendChild(newItemElem);
+
+
+        });
+    </script>
+</body>
+</html>
