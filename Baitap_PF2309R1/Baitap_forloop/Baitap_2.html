@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai tap 2</title>
+</head>
+<body>
+    <h1>Bài 2</h1>
+    <p>Viết chương trình nhập vào một số nguyên dương n. Tính giai thừa của n. <br>
+       Note: Giai thừa của n được tính bằng công thức: <br>
+       n! = n*(n - 1)*(n - 2)*....1 <br>
+      Ví dụ: 5! = 5 * 4 * 3 * 2 * 1 = 120</p>
+
+    <form action="">
+    <label for="">Nhập số nguyên n: </label>
+    <input id="soN" type="number">
+    <button id="btn-action" type="button">Submit</button>
+</form>
+
+<script>
+    let btnaction =document.getElementById("btn-action");
+        btnaction.addEventListener("click", () =>{
+            let SoNguyen = parseFloat(document.getElementById("soN").value);
+            let a = 1;
+            for(i = 1 ; i < SoNguyen ;i -= 1 ){
+            a = SoNguyen * (SoNguyen = i);     
+        alert(`Giai thua la ${a}`)};
+    });
+</script>
+</body>
+</html>

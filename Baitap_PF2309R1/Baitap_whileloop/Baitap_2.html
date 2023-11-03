@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai tap 2</title>
+</head>
+<body>
+    <h1>Bai 2</h1>
+    <p>Viết chương trình nhập vào một số nguyên n và in ra các số từ 1 đến n với các trường hợp ngoại lệ như sau:
+        - Nếu số đó chia hết cho 3 thì in "java"
+        - Nếu số đó chia hết cho 7 thì in "script"
+        - Nếu số đó chia hết cho cả 3 và 7 thì in "javascript"
+        </p>
+
+        <form action="">
+            <label for="">Nhap so nguyen n: </label>
+            <input type="number" id="SoN">
+            <button type="button" id="btn-action">Submit</button>
+        </form>
+        <script>
+            let btnAction = document.getElementById("btn-action");
+
+            btnAction.addEventListener("click", () => {
+                let SoNguyen = parseInt(document.getElementById("SoN").value);
+                let i = 1;
+
+                while(i <= SoNguyen){
+                i += 1;
+
+                if(i % 3 == 0){
+                    alert("java");
+                }else if(i % 7 == 0){
+                    alert("script");
+                }else if(i % 3 == 0 && i % 7 == 0){
+                    alert("java script");
+                }
+                alert(i);
+                }
+            })
+    
+        </script>
+</body>
+</html>

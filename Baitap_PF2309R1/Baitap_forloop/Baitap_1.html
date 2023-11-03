@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai tap 1</title>
+</head>
+<body>
+    <h1>Bài 1</h1>
+    <p>Viết chương trình nhập vào 1 số nguyên n. Tính tổng các số chẵn từ 0 đến n.</p>
+    <form action="">
+        <label for="">Nhập số nguyên n: </label>
+        <input id="soN" type="number">
+        <button id="btn-action" type="button">Submit</button>
+    </form>
+    <script>
+        let btnaction =document.getElementById("btn-action");
+        btnaction.addEventListener("click", () => {
+            let n = parseFloat(document.getElementById("soN").value);
+            let x =0;
+            for(i = 0; i <= n; i += 2){
+            x = x + i;
+        alert(`tong la ${x}`)};
+    });
+    </script>
+</body>
+</html>
