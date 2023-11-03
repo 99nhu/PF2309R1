@@ -25,11 +25,11 @@
         let btnaction =document.getElementById("btn-action");
         btnaction.addEventListener("click", () => {
         let SoHang = parseFloat(document.getElementById("soHang").value);
-        let congSai =parseFloat(document.getElementById("congsai").value);
+        let congSai =parseFloat(document.getElementById("congSai").value);
         let b = 0;
-        for(let i =0 ;i < 10;i += 1){
-        a=n1+ (congsai1 * i);
-        console.log(a);
+        for(let i =  1; i < 10; i += 5){
+        b = b + i;
+        alert(b);
             
         };
         });
