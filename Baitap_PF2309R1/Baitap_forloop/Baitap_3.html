@@ -25,10 +25,10 @@
         let btnaction =document.getElementById("btn-action");
         btnaction.addEventListener("click", () => {
         let SoHang = parseFloat(document.getElementById("soHang").value);
-        let congSai =parseFloat(document.getElementById("congSai").value);
+        let CongSai =parseFloat(document.getElementById("congSai").value);
         let b = 0;
-        for(let i =  1; i < 10; i += 5){
-        b = b + i;
+        for(let i =  SoHang; i < 10; i += CongSai){
+        b = SoHang + (i * CongSai);
         alert(b);
             
         };
