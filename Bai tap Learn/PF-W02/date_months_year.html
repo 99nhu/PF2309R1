@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hien thi ngay thang nam</title>
+</head>
+<body>
+    <script>
+        let year = prompt("Nhap nam: ");
+        let month = prompt("Nhap thang: ");
+        let date = prompt("Nhap ngay: ");
+
+        let dateMonthYear = date.padStart(2, '0') + '-' + month.padStart(2, '0') + '-' + year;
+
+        document.write(dateMonthYear);
+    </script>
+</body>
+</html>
