@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tinh diem thi dai hoc</title>
+</head>
+<body>
+    Điểm Toán: <input type="number" id="toan">
+Điểm Văn: <input type="number" id="van">
+Điểm Anh: <input type="number" id="anh">
+
+Khu vực: 
+<select id="kv">
+  <option value="KV1">KV1</option>
+  <option value="KV2-NT">KV2-NT</option>
+  <option value="KV2">KV2</option>
+  <option value="KV3">KV3</option>  
+</select>
+
+<button onclick="tinhDiem()">Tính điểm</button> 
+
+<p id="ketqua"></p>
+
+<script>
+function tinhDiem() {
+  var toan = document.getElementById("toan").value; 
+  var van = document.getElementById("van").value;
+  var anh = document.getElementById("anh").value;
+  
+  var kv = document.getElementById("kv").value;
+  
+  var diemKV;
+  switch(kv) {
+    case "KV1":
+      diemKV = 0.75;
+      break;
+    case "KV2-NT":
+      diemKV = 0.5;
+      break;
+    case "KV2":
+      diemKV = 0.25;
+      break;
+    default:
+      diemKV = 0;
+  }
+  
+  var diem = parseFloat(toan) + parseFloat(van) + parseFloat(anh) + diemKV;
+
+  document.getElementById("ketqua").innerHTML = "Tổng điểm khối D của bạn là : " + diem;  
+}
+</script>
+
+</body>
+</html>

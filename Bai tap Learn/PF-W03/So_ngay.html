@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tinh so ngay trong 1 thang</title>
+</head>
+<body>
+    Tháng: <input type="number" id="month" value="1">  
+<button onclick="findDays()">Tính số ngày </button>
+
+<p id="result"></p>
+
+<script>
+function findDays() {
+
+  let month = document.getElementById("month").value;
+  
+  switch(month) {
+    case 1: 
+    case 3:
+    case 5: 
+    case 7:
+    case 8:
+    case 10:
+    case 12:
+      text = "Tháng " + month + " có 31 ngày";
+      break;
+
+    case 4:
+    case 6:
+    case 9: 
+    case 11:
+      text = "Tháng " + month + " có 30 ngày";
+      break;
+
+    case 2:
+      text = "Tháng " + month + " có 28 hoặc 29 ngày";
+      break;
+      
+    default:
+      text = "Vui lòng nhập số tháng từ 1 đến 12";
+  }
+
+  document.getElementById("result").innerHTML = text;
+}
+</script>
+
+</body>
+</html>

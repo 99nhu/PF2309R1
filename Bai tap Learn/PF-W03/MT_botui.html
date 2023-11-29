@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ung dung may tinh bo tui</title>
+</head>
+<body>
+    <div id="screen">0</div>
+  <button onclick="clickNumber(0)">0</button>
+  <button onclick="clickNumber(1)">1</button>
+  <button onclick="clickNumber(2)">2</button>
+  <button onclick="clickNumber(3)">3</button>
+  <button onclick="clickNumber(4)">4</button>
+  <button onclick="clickNumber(5)">5</button>
+  <button onclick="clickNumber(6)">6</button>
+  <button onclick="clickNumber(7)">7</button>
+  <button onclick="clickNumber(8)">8</button>
+  <button onclick="clickNumber(9)">9</button>
+  
+  <button onclick="clickOperator('+')">+</button>
+  <button onclick="clickOperator('-')">-</button>
+  
+  <button onclick="calculate()">=</button>
+
+  <script>
+    let currentNum = ''; 
+let operator = null;
+let prevNum = null;
+function clickNumber(num) {
+  currentNum += num;
+  document.getElementById('screen').innerHTML = currentNum; 
+}
+
+function clickOperator(op) {
+  
+  operator = op;
+
+  prevNum = parseFloat(currentNum);
+
+  currentNum = '';
+}
+
+function calculate() {
+
+  let curNum = parseFloat(currentNum); 
+
+  if (operator === '+') {
+    currentNum = prevNum + curNum;
+  }
+  else if (operator === '-') {
+    currentNum = prevNum - curNum; 
+  }
+
+  document.getElementById('screen').innerHTML = currentNum;
+}
+  </script>
+</body>
+</html>

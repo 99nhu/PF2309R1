@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tinh nam am lichj tu nam duong lich</title>
+</head>
+<body>
+    <script>
+        let namDuongLich = prompt('Nhập năm dương lịch: ');
+
+let can = namDuongLich % 10;
+let canChi = "";
+switch(can) {
+  case 0:
+  case 1:
+    canChi += "Canh ";  
+    break;
+  case 2:
+  case 3:
+    canChi += "Tân ";
+    break;
+  case 4:
+  case 5: 
+    canChi += "Nhâm ";
+    break;
+  case 6:
+  case 7:
+    canChi += "Quý ";
+    break; 
+  case 8:
+  case 9:
+    canChi += "Giáp ";
+    break;
+}
+
+
+let chi = namDuongLich % 12;
+switch(chi) {
+  case 0:
+    canChi += "Thân";
+    break;
+  case 1:
+    canChi += "Dậu";  
+    break;
+  case 2:
+    canChi += "Tuất";
+    break;
+}
+
+alert('Năm âm lịch: ' + canChi);
+    </script>
+</body>
+</html>
