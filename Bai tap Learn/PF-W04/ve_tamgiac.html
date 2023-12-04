@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ve tam giac</title>
+</head>
+<body>
+    <h2>Các Hình Tam Giác Vuông</h2>
+
+  <script>
+
+    var rows = 5;
+    for (var i = 1; i <= rows; i++) {
+      var line = '';
+      for (var j = 1; j <= i; j++) {
+        line += '* ';
+      }
+      document.write('<div class="triangle">' + line + '</div>');
+    }
+
+    for (var i = rows; i >= 1; i--) {
+      var line = '';
+      for (var j = 1; j <= i; j++) {
+        line += '* ';
+      }
+      document.write('<div class="triangle">' + line + '</div>');
+    }
+  </script>
+</body>
+</html>

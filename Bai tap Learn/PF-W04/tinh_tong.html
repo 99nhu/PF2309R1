@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tinh tong cac so trong khoang</title>
+</head>
+<body>
+    <h2>Tính Tổng Các Số Trong Khoảng</h2>
+
+  <form>
+    <label for="inputA">Nhập số a:</label>
+    <input type="number" id="inputA" required>
+
+    <label for="inputB">Nhập số b:</label>
+    <input type="number" id="inputB" required>
+
+    <button type="button" onclick="tinhTong()">Tính Tổng</button>
+  </form>
+
+  <p id="result"></p>
+
+  <script>
+    function tinhTong() {
+      let a = parseInt(document.getElementById('inputA').value);
+      let b = parseInt(document.getElementById('inputB').value);
+      if (a > b) {
+        let temp = a;
+        a = b;
+        b = temp;
+      }
+
+      let sum = 0;
+
+      for (let i = a; i <= b; i++) {
+        sum += i;
+      }
+
+      document.getElementById('result').innerHTML = "Tổng các số từ " + a + " đến " + b + " là: " + sum;
+    }
+  </script>
+</body>
+</html>

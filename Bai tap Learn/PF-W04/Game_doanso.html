@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game doan so</title>
+</head>
+<body>
+    <button onclick="startGame()">Chơi</button>
+    <script>
+    let count = 0;
+
+        function startGame() {
+        
+          let maxNum;
+          
+          do {
+            maxNum = prompt('Chọn số lớn nhất');
+          } while(!maxNum);
+          const randNum = Math.floor(Math.random() * maxNum) + 1; 
+          while(count < 3) {
+            let guessNum = prompt('Đoán số: ');
+            if(guessNum == randNum) {
+              alert('Chúc mừng, bạn đã đoán đúng!');
+              return; 
+            }
+            else if(guessNum < randNum) {
+              alert('Số bạn đoán nhỏ hơn!');
+            }
+            else {
+              alert('Số bạn đoán lớn hơn!'); 
+            }
+        
+            count++;
+          }
+          
+          alert(`Bạn đã hết lượt đoán! Số may mắn là ${randNum}`);
+        }</script>
+</body>
+</html>

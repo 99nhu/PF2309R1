@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>in day Fibonacci</title>
+</head>
+<body>
+    <script>
+        let n = parseInt(prompt("Nhập số phần tử của dãy Fibonacci:"));
+let f1 = 1; 
+let f2 = 1;
+document.write(f1 + " " + f2 + " ");  
+
+let i = 2;
+while (i < n) {
+  let fn = f1 + f2;
+  document.write(fn + " ");
+  f1 = f2;
+  f2 = fn;
+  i++;  
+}
+    </script>
+</body>
+</html>

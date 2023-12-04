@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyen tap vong lap</title>
+</head>
+<body>
+    <h2>Bài 1: Đếm đến 100</h2>
+    <script>
+      var i = 1;
+      while (i <= 100) {
+        if (i === 99) {
+          alert('Đã hoàn thành');
+        }
+        i++;
+      }
+    </script>
+  
+    <h2>Bài 2: Kiểm tra nhiệt độ</h2>
+    <script>
+      var nhietDo = parseFloat(prompt("Nhập nhiệt độ hiện tại:"));
+      if (nhietDo > 100) {
+        alert('Yêu cầu giảm nhiệt độ.');
+      } else if (nhietDo < 20) {
+        alert('Yêu cầu tăng nhiệt độ.');
+      }
+    </script>
+  
+    <h2>Bài 3: Dãy Fibonacci</h2>
+    <script>
+      var a = 0, b = 1;
+      var count = 0;
+      while (count < 20) {
+        document.write(a + ' ');
+        var temp = a + b;
+        a = b;
+        b = temp;
+        count++;
+      }
+    </script>
+  
+    <h2>Bài 4: Số Fibonacci chia hết cho 5 đầu tiên</h2>
+    <script>
+      var a = 0, b = 1;
+      while (true) {
+        if (a % 5 === 0) {
+          document.write(a + ' ');
+          break;
+        }
+        var temp = a + b;
+        a = b;
+        b = temp;
+      }
+    </script>
+  
+    <h2>Bài 5: Tổng 20 số đầu tiên trong dãy Fibonacci</h2>
+    <script>
+      var a = 0, b = 1, sum = 0, count = 0;
+      while (count < 20) {
+        sum += a;
+        var temp = a + b;
+        a = b;
+        b = temp;
+        count++;
+      }
+      document.write('Tổng: ' + sum);
+    </script>
+  
+    <h2>Bài 6: Tổng 30 số chia hết cho 7 đầu tiên</h2>
+    <script>
+      var num = 1, sum = 0, count = 0;
+      while (count < 30) {
+        if (num % 7 === 0) {
+          sum += num;
+          count++;
+        }
+        num++;
+      }
+      document.write('Tổng: ' + sum);
+    </script>
+  
+    <h2>Bài 7: FizzBuzz</h2>
+    <script>
+      var i = 1;
+      while (i <= 100) {
+        if (i % 3 === 0 && i % 5 === 0) {
+          document.write('FizzBuzz ');
+        } else if (i % 3 === 0) {
+          document.write('Fizz ');
+        } else if (i % 5 === 0) {
+          document.write('Buzz ');
+        } else {
+          document.write(i + ' ');
+        }
+        i++;
+      }
+    </script>
+</body>
+</html>
