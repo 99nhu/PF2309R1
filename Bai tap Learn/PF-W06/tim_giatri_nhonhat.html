@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ham tim gia tri nho nhat cua mang</title>
+</head>
+<body>
+    <script>
+        function findMin(arr) {
+  if (arr.length === 0) {
+    return -1;
+  }
+
+  let min = arr[0];
+
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < min) {
+      min = arr[i]; 
+    }
+  }
+
+  return min;
+}
+
+let arr1 = [3, 5, 1, 8, -3, 7, 8];
+let min1 = findMin(arr1); 
+
+let arr2 = [7, 12, 6, 9, 20, 56, 89]; 
+let min2 = findMin(arr2);
+
+let arr3 = [];
+let min3 = findMin(arr3);
+
+let arr4 = [0, 0, 0, 0, 0, 0];
+let min4 = findMin(arr4);
+
+console.log(min1); // -3
+console.log(min2); // 6  
+console.log(min3); // -1
+console.log(min4); // 0
+    </script>
+</body>
+</html>

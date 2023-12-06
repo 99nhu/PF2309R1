@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyen doi giua feet va meters</title>
+</head>
+<body>
+    <script>
+        function footToMeter(foot) {
+    return 0.305 * foot;
+}
+
+function meterToFoot(meter) {
+    return 3.279 * meter;
+}
+
+function testConversionFunctions() {
+    const testValues = [1, 2, 5, 10, 20];
+
+    console.log("Feet to Meters:");
+    testValues.forEach((value) => {
+        const result = footToMeter(value);
+        console.log(`${value} feet = ${result.toFixed(2)} meters`);
+    });
+
+    console.log("\nMeters to Feet:");
+    testValues.forEach((value) => {
+        const result = meterToFoot(value);
+        console.log(`${value} meters = ${result.toFixed(2)} feet`);
+    });
+}
+
+testConversionFunctions();
+    </script>
+</body>
+</html>

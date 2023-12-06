@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ung dung quan lis san pham su dung ham</title>
+</head>
+<body>
+    <h1>Product Management</h1>
+
+    
+    <form id="addProductForm">
+        <label for="productName">Product Name:</label>
+        <input type="text" id="productName" required>
+        <button type="button" onclick="addProduct()">Add Product</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>Product Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="productListBody"></tbody>
+    </table>
+
+  
+    <form id="editProductForm" style="display: none;">
+        <label for="editedProductName">Edit Product Name:</label>
+        <input type="text" id="editedProductName" required>
+        <button type="button" onclick="editProduct()">Save Changes</button>
+    </form>
+
+    <script>
+        let productList = [];
+
+
+function displayProductList() {
+    const productListBody = document.getElementById("productListBody");
+    productListBody.innerHTML = "";
+
+    for (let i = 0; i < productList.length; i++) {
+        const row = `
+            <tr>
+                <td>${i + 1}</td>
+                <td onclick="editProductName(${i})">${productList[i]}</td>
+                <td><button onclick="deleteProduct(${i})">Delete</button></td>
+            </tr>
+        `;
+        productListBody.innerHTML += row;
+    }
+}
+
+function addProduct() {
+    const productName = document.getElementById("productName").value;
+    productList.push(productName);
+    displayProductList();
+    alert("Product added successfully!");
+}
+
+function editProductName(index) {
+    const editedProductName = document.getElementById("editedProductName");
+    editedProductName.value = productList[index];
+    document.getElementById("editProductForm").style.display = "block";
+    document.getElementById("addProductForm").style.display = "none";
+
+    editedProductName.dataset.index = index;
+}
+
+function editProduct() {
+    const editedProductName = document.getElementById("editedProductName");
+    const index = editedProductName.dataset.index;
+    productList[index] = editedProductName.value;
+    displayProductList();
+
+
+    editedProductName.value = "";
+    document.getElementById("editProductForm").style.display = "none";
+    document.getElementById("addProductForm").style.display = "block";
+}
+
+function deleteProduct(index) {
+    productList.splice(index, 1);
+    displayProductList();
+    alert("Product deleted successfully!");
+}
+
+displayProductList();
+    </script>
+</body>
+</html>

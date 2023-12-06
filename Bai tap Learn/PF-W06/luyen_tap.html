@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyen tap tao va su dung ham</title>
+</head>
+<body>
+    <script>
+        // Bài 1
+function compareAndSum(a, b) {
+    if (a > b) {
+        alert("Tham số thứ nhất lớn hơn tham số thứ hai!");
+    } else {
+        return a + b;
+    }
+}
+
+// Bài 2
+const stars = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+const constellations = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+
+function findConstellation(starName) {
+    const index = stars.indexOf(starName);
+    if (index !== -1) {
+        return constellations[index];
+    } else {
+        return "Không tìm thấy chòm sao tương ứng.";
+    }
+}
+
+const userInput = prompt("Nhập tên ngôi sao:");
+const result = findConstellation(userInput);
+alert(result);
+
+// Bài 3
+function square(number) {
+    return number * number;
+}
+
+console.log(square(5));  // Kết quả: 25
+
+// Bài 4
+function calculateCircleArea(radius) {
+    return Math.PI * radius * radius;
+}
+
+function calculateCirclePerimeter(radius) {
+    return 2 * Math.PI * radius;
+}
+
+console.log(calculateCircleArea(3));       // Diện tích hình tròn
+console.log(calculateCirclePerimeter(3));  // Chu vi hình tròn
+
+// Bài 5
+function factorial(number) {
+    if (number === 0 || number === 1) {
+        return 1;
+    } else {
+        return number * factorial(number - 1);
+    }
+}
+
+console.log(factorial(5));  // Kết quả: 120
+
+// Bài 6
+function isDigit(char) {
+    return !isNaN(char) && char !== " ";
+}
+
+console.log(isDigit("5"));   // true
+console.log(isDigit("a"));   // false
+
+// Bài 7
+function findMin(a, b, c) {
+    return Math.min(a, b, c);
+}
+
+console.log(findMin(3, 7, 2));  // Kết quả: 2
+
+// Bài 8
+function isPositiveInteger(number) {
+    return Number.isInteger(number) && number > 0;
+}
+
+console.log(isPositiveInteger(5));  // true
+console.log(isPositiveInteger(-2)); // false
+
+// Bài 9
+function reverseArray(arr) {
+    return arr.reverse();
+}
+
+console.log(reverseArray([1, 2, 3, 4]));  // Kết quả: [4, 3, 2, 1]
+
+// Bài 10
+function countOccurrences(arr, char) {
+    return arr.filter(c => c === char).length;
+}
+
+const charArray = ["a", "b", "c", "a", "d", "e", "a"];
+console.log(countOccurrences(charArray, "a"));  // Kết quả: 3
+    </script>
+</body>
+</html>
