@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic tac toe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        td {
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <table id="caroBoard"></table>
+    <script>
+        const boardSize = 5;
+let currentPlayer = 'X';
+let caroBoard = [];
+
+// Initialize the caro board
+function initializeBoard() {
+    for (let i = 0; i < boardSize; i++) {
+        caroBoard[i] = [];
+        for (let j = 0; j < boardSize; j++) {
+            caroBoard[i][j] = '.';
+        }
+    }
+}
+
+// Render the caro board
+function renderBoard() {
+    const caroTable = document.getElementById('caroBoard');
+    caroTable.innerHTML = '';
+
+    for (let i = 0; i < boardSize; i++) {
+        const row = document.createElement('tr');
+
+        for (let j = 0; j < boardSize; j++) {
+            const cell = document.createElement('td');
+            cell.textContent = caroBoard[i][j];
+            cell.addEventListener('click', () => onCellClick(i, j));
+            row.appendChild(cell);
+        }
+
+        caroTable.appendChild(row);
+    }
+}
+
+// Handle cell click event
+function onCellClick(row, col) {
+    if (caroBoard[row][col] === '.') {
+        caroBoard[row][col] = currentPlayer;
+        renderBoard();
+
+        if (checkWinner(row, col)) {
+            alert(`Player ${currentPlayer} wins!`);
+            initializeBoard();
+            renderBoard();
+        } else {
+            switchPlayer();
+        }
+    }
+}
+
+// Check for a winner
+function checkWinner(row, col) {
+    const directions = [
+        { x: 1, y: 0 },
+        { x: 0, y: 1 },
+        { x: 1, y: 1 },
+        { x: 1, y: -1 }
+    ];
+
+    for (const dir of directions) {
+        const count = countConsecutive(row, col, dir.x, dir.y) + countConsecutive(row, col, -dir.x, -dir.y) + 1;
+        if (count >= 3) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+// Count consecutive marks in a direction
+function countConsecutive(row, col, dirX, dirY) {
+    let count = 0;
+    let x = row + dirX;
+    let y = col + dirY;
+
+    while (x >= 0 && x < boardSize && y >= 0 && y < boardSize && caroBoard[x][y] === currentPlayer) {
+        count++;
+        x += dirX;
+        y += dirY;
+    }
+
+    return count;
+}
+
+// Switch player
+function switchPlayer() {
+    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+}
+
+// Initialize the board and render it
+initializeBoard();
+renderBoard();
+    </script>
+</body>
+</html>

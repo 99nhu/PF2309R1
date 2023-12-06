@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ung dung tro choi</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+#textContainer {
+    margin-bottom: 20px;
+}
+
+#userInput {
+    font-size: 16px;
+    padding: 10px;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="textContainer">
+            <p id="textToType">Type anthing slowly</p>
+        </div>
+        <input type="text" id="userInput" oninput="checkInput()">
+    </div>
+    <script>
+        const textToType = "Type anthing slowly";
+const textContainer = document.getElementById("textToType");
+const userInput = document.getElementById("userInput");
+
+let index = 0;
+
+function checkInput() {
+    const inputText = userInput.value;
+    const expectedText = textToType.substring(0, inputText.length);
+
+    if (inputText === expectedText) {
+        textContainer.innerHTML = `<span class="correct">${expectedText}</span>${textToType.substring(inputText.length)}`;
+        userInput.classList.remove("incorrect");
+    } else {
+        textContainer.innerHTML = `<span class="incorrect">${expectedText}</span>${textToType.substring(inputText.length)}`;
+        userInput.classList.add("incorrect");
+    }
+}
+
+// Optional: To reset the input and text on Enter key press
+userInput.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        userInput.value = "";
+        textContainer.innerHTML = textToType;
+    }
+});
+    </script>
+</body>
+</html>
